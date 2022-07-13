@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 
 abstract class AbstractCommandTest {
-    protected TGBot tgBot;
+    protected TGBot tgBot = Mockito.mock(TGBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(tgBot);
 
     abstract String getCommandName();
