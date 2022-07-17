@@ -3,6 +3,8 @@ package com.example.telegrambot.tgbot;
 import com.example.telegrambot.command.CommandContainer;
 import com.example.telegrambot.service.SendBotMessageService;
 import com.example.telegrambot.service.SendBotMessageServiceImpl;
+import com.example.telegrambot.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,8 +27,9 @@ public class TGBot extends TelegramLongPollingBot{
 
     private CommandContainer commandContainer;
 
-    public TGBot(){
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public TGBot(TelegramUserService telegramUserService){
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
