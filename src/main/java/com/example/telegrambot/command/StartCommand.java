@@ -10,7 +10,7 @@ public class StartCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public final static String START_MESSAGE = "Привет, я teko_practice_bot/n Введите ID компании";
+    public final static String START_MESSAGE = "Привет, я teko_practice_bot";
 
     public StartCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
         this.sendBotMessageService = sendBotMessageService;
@@ -34,6 +34,6 @@ public class StartCommand implements Command {
                 }
         );
 
-        sendBotMessageService.sendMessage(chatId, START_MESSAGE);
+        sendBotMessageService.sendMessage(chatId, START_MESSAGE, true);
     }
 }

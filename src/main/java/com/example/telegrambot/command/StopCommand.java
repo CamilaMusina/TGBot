@@ -8,7 +8,7 @@ public class StopCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
 
-    public static final String STOP_MESSAGE = "Добавить сообщение при завершении работы";
+    public static final String STOP_MESSAGE = "Работа с ботом завершена";
 
     public StopCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService) {
         this.sendBotMessageService = sendBotMessageService;
