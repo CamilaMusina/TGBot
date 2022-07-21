@@ -1,5 +1,7 @@
 package com.example.telegrambot.command;
 
+import com.example.telegrambot.service.TelegramUserService;
+import com.example.telegrambot.service.TelegramUserServiceImpl;
 import com.example.telegrambot.tgbot.TGBot;
 import com.example.telegrambot.service.SendBotMessageService;
 import com.example.telegrambot.service.SendBotMessageServiceImpl;
